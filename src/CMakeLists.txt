@@ -7,11 +7,11 @@ set(SOURCE
 
         )
 set(INCLUDE
-        ${MY_DIRECTORY}/
+        ${MY_DIRECTORY}/station.h
+        ${MY_DIRECTORY}/train.h
         )
 
 
 add_executable(elf_village ${SOURCE} ${INCLUDE})
 target_include_directories (elf_village PUBLIC ${MY_DIRECTORY})
 
-add_executable(railway_station main.cpp)
