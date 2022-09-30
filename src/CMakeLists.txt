@@ -4,7 +4,8 @@ set (MY_DIRECTORY ${CMAKE_SOURCE_DIR}/include)
 
 set(SOURCE
         main.cpp
-
+        station.cpp
+        train.cpp
         )
 set(INCLUDE
         ${MY_DIRECTORY}/station.h

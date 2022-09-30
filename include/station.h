@@ -10,37 +10,15 @@ class Station {
     std::mutex * stationPlace;
 public:
 
-    Station (std::string stationStatus,std::string inName ){
+    Station (std::string stationStatus,std::string inName );
 
-        stationPlace = new std::mutex ();
+    void setStationName (std::string inName);
 
-        setStationName(inName);
-        setStationStatus(std::move(stationStatus));
-    }
+    std::string getStationName ();
 
-    void setStationName (std::string inName){
-        name = inName;
-    }
+    void setStationStatus (std::string stationStatus);
 
-    std::string getStationName (){
-        return name;
-    }
-
-    void setStationStatus (std::string stationStatus){
-        if (stationStatus == "busy"){
-            stationPlace->lock();
-            stationIsBusy = true;
-        }
-        else if (stationStatus == "free"){
-            stationIsBusy = false;
-            stationPlace->unlock();
-        }
-
-    }
-
-    bool getStationIsBusy (){
-        return stationIsBusy;
-    }
+    bool getStationIsBusy ();
 
     ~Station() = default;
 };
